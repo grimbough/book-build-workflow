@@ -1,0 +1,10 @@
+r_script: 
+  class: File
+  path: script-1.R
+chapters:
+- {class: File, path: input/index.Rmd}
+- {class: File, path: input/01-tables.Rmd}
+- {class: File, path: input/02-figures.Rmd}
+local_library:
+  class: Directory
+  path: /mnt/storage/R-library/book-builder-3.6/
