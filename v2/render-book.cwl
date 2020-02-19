@@ -33,6 +33,6 @@ inputs:
 
 outputs:
   book_dir:
-    type: Directory
+    type: Directory[]
     outputBinding:
-      glob: "_book"
+      glob: "_book*"

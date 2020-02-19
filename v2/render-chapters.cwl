@@ -15,7 +15,7 @@ inputs:
 
 outputs:
   book_dir:
-    type: Directory
+    type: Directory[]
     outputSource: compile_book/book_dir
 
 steps:
