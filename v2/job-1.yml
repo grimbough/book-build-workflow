@@ -1,9 +1,9 @@
 r_script: 
   class: File
-  path: script-1.R
+  path: render-chapter.R
 rmd_chapter:
   class: File
   path: input/02-figures.Rmd
 local_library:
   class: Directory
-  path: /mnt/storage/R-library/book-builder-3.6/
+  path: /mnt/data/R-lib/3.6.2-singularity/

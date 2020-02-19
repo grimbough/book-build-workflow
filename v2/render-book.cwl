@@ -12,7 +12,13 @@ inputs:
   local_library: Directory
 
 outputs:
-  chapter_dirs: Directory[]
+  cache_dirs:
+    type:
+      type: array
+      items:
+        type: array
+        items: Directory
+    outputSource: compile/book_html
 
 steps:
   compile:
@@ -22,4 +28,4 @@ steps:
       r_script: r_script
       rmd_chapter: chapters
       local_library: local_library
-    out: [book_directory]
+    out: [book_html]

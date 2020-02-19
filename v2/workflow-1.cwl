@@ -29,9 +29,9 @@ inputs:
       position: 3
 
 outputs:
-  book_directory:
+  book_html:
     type: 
       type: array
       items: Directory
     outputBinding:
-      glob: '_book*'
+      glob: '$(inputs.rmd_chapter.nameroot)_*'

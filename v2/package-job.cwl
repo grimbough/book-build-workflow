@@ -3,4 +3,4 @@ r_script:
   path: install-packages.R
 local_library:
   class: Directory
-  path: /mnt/storage/R-library/book-builder-3.6/
+  path: /mnt/data/R-lib/3.6.2-singularity/
