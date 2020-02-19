@@ -1,31 +1,38 @@
 #!/usr/bin/env cwl-runner
 
 cwlVersion: v1.0
-class: Workflow
+class: CommandLineTool
 
-requirements:
-  ScatterFeatureRequirement: {}
+baseCommand: Rscript
+
+hints:
+  DockerRequirement:
+    dockerPull: rocker/tidyverse
 
 inputs:
-  r_script: File
-  chapters: File[]
-  local_library: Directory
-
-outputs:
+  r_script:
+    type: File
+    inputBinding:
+      position: 1
+  rmd_chapters:
+    type: Directory
+    inputBinding:
+      position: 2
+  local_library:
+    type: Directory
+    inputBinding:
+      position: 3
   cache_dirs:
     type:
       type: array
       items:
         type: array
         items: Directory
-    outputSource: compile/book_html
+    inputBinding:
+      position: 4
 
-steps:
-  compile:
-    run: workflow-1.cwl
-    scatter: rmd_chapter
-    in:
-      r_script: r_script
-      rmd_chapter: chapters
-      local_library: local_library
-    out: [book_html]
+outputs:
+  book_dir:
+    type: Directory
+    outputBinding:
+      glob: "_book"

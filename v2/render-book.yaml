@@ -1,0 +1,15 @@
+r_script: 
+  class: File
+  path: render-book.R
+rmd_chapters:
+  class: Directory
+  path: input
+local_library:
+  class: Directory
+  path: /mnt/data/R-lib/3.6.2-singularity/
+cache_dirs:
+-
+  - {class: Directory, path: 01-tables_cache}
+-
+  - {class: Directory, path: 02-figures_files}
+  - {class: Directory, path: 02-figures_cache}

@@ -1,10 +1,16 @@
-r_script: 
+r_script_1: 
   class: File
   path: render-chapter.R
+r_script_2: 
+  class: File
+  path: render-book.R
 chapters:
 - {class: File, path: input/index.Rmd}
 - {class: File, path: input/01-tables.Rmd}
 - {class: File, path: input/02-figures.Rmd}
+chapters_dir:
+  class: Directory
+  path: input/
 local_library:
   class: Directory
   path: /mnt/data/R-lib/3.6.2-singularity/
