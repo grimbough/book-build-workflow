@@ -3,8 +3,7 @@ title: "MSMB HTML Book Style"
 author: "Mike Smith"
 date: "`r Sys.Date()`"
 output:
-  bookdown::html_book:
-    toc: yes
+  bookdown::gitbook
 ---
 
 # Introduction {-}

@@ -3,8 +3,7 @@ title: "MSMB HTML Book Style"
 author: "Mike Smith"
 date: "`r Sys.Date()`"
 output:
-  bookdown::html_book:
-    toc: yes
+  bookdown::gitbook
 ---
 
 # Tables
@@ -15,7 +14,7 @@ Both of the examples below are taken from @MSMB.
 
 We have have tables in the main body of the text, as seen below in Table \@ref(tab:main-table).  Following the **tufte** convention the caption appears alongside in the margin.
 
-```{r, main-table, echo = FALSE}
+```{r, main-table, echo = FALSE, cache = TRUE}
 d1 <- t(data.frame(
     quiet = c(2770, 2150, 2140, 875, 1220, 821, 2510),
     angry = c(2970, 1530, 1740, 752, 1040, 710, 1730),
