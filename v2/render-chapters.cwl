@@ -17,6 +17,9 @@ outputs:
   book_dir:
     type: Directory[]
     outputSource: compile_book/book_dir
+  chapter_std_out:
+    type: File[]
+    outputSource: render_chapters/std_out
 
 steps:
 
@@ -27,7 +30,7 @@ steps:
       r_script: r_script_1
       rmd_chapter: chapters
       local_library: local_library
-    out: [book_html]
+    out: [book_html, std_out]
 
   compile_book:
     run: render-book.cwl

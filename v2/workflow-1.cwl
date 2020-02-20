@@ -28,6 +28,8 @@ inputs:
     inputBinding:
       position: 3
 
+stdout: '$(inputs.rmd_chapter.nameroot).out'
+
 outputs:
   book_html:
     type: 
@@ -35,3 +37,5 @@ outputs:
       items: Directory
     outputBinding:
       glob: '$(inputs.rmd_chapter.nameroot)_*'
+  std_out:
+    type: stdout
