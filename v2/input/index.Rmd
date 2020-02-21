@@ -14,7 +14,7 @@ You can view the R Markdown documents used to create this site on [Github](https
 
 ## Basic usage
 
-To produce an HTML page using *"msmbstyle"* you need to set the output to  `msmbstyle::msmb_html_book` in the yaml header of your R Markdown file.  The header used in this example site is shown below:
+To produce an HTML page using *"msmbstyle"* you need to set the output to  in the yaml header of your R Markdown file.  The header used in this example site is shown below:
 
 ```yaml
 title: "MSMB HTML Book Style"
@@ -23,7 +23,6 @@ date: "`r Sys.Date()`"
 knit: "bookdown::preview_chapter"
 site: "bookdown::bookdown_site"
 output:
-  msmbstyle::msmb_html_book:
     toc: TRUE
     toc_depth: 1
     split_by: chapter
