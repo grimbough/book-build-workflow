@@ -18,7 +18,11 @@ inputs:
   local_library:
     type: Directory
     inputBinding:
-      position: 2
+      position: 2        
+  rmd_chapters:
+    type: Directory
+    inputBinding:
+      position: 3    
 
 outputs:
   packages:
