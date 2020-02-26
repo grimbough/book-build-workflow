@@ -4,3 +4,6 @@ r_script:
 local_library:
   class: Directory
   path: /mnt/data/R-lib/3.6.2-singularity/
+rmd_chapters:
+  class: Directory
+  path: input

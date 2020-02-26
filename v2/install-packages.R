@@ -1,6 +1,8 @@
 
 args <- commandArgs(trailingOnly = TRUE)
 
+options(Ncpus = 4L)
+
 local_library <- args[1]
 input_dir <- args[2]
 
@@ -18,7 +20,7 @@ scrapeDependencies <- function(dir) {
   }
   
   collated <- unique(collated)
-  sort(union(collated, c("BiocStyle", "bookdown")))
+  sort(union(collated, c("BiocStyle", "bookdown", "grimbough/msmbstyle")))
 }
 
 .extract_pkgname <- function(pattern, txt) {
@@ -30,11 +32,14 @@ scrapeDependencies <- function(dir) {
 .libPaths(local_library)
 
 pkgsNeeded <- scrapeDependencies(input_dir) 
+pkgsNeeded <- gsub(x = pkgsNeeded, pattern = '"', '')
 pkgsAvailable <- installed.packages()[, "Package"]
 pkgsToInstall <- setdiff(pkgsNeeded, pkgsAvailable)
 
 if (!requireNamespace("BiocManager", quietly = TRUE))
-    install.packages("BiocManager")
+    install.packages("BiocManager", lib = "/usr/local/lib/R/site-library/")
+if (!requireNamespace("remotes", quietly = TRUE))
+    install.packages("remotes", lib = "/usr/local/lib/R/site-library/")
 
 BiocManager::install(pkgsToInstall, lib = "/usr/local/lib/R/site-library/",
 	ask = FALSE, update = TRUE)

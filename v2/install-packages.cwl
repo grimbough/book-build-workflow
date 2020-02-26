@@ -5,9 +5,13 @@ class: CommandLineTool
 
 baseCommand: Rscript
 
+requirements:
+  ResourceRequirement:
+    coresMin: 4
+
 hints:
   DockerRequirement:
-    dockerPull: rocker/tidyverse
+    dockerPull: bioconductor/bioconductor_docker:RELEASE_3_10
     dockerOutputDirectory: /usr/local/lib/R/site-library
 
 inputs:
