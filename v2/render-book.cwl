@@ -7,7 +7,14 @@ baseCommand: Rscript
 
 hints:
   DockerRequirement:
-    dockerPull: rocker/tidyverse
+    dockerPull: bioconductor/bioconductor_docker:RELEASE_3_10
+
+requirements:
+  InitialWorkDirRequirement:
+    listing:
+      - $(inputs.images_dir)
+      - $(inputs.data_dir)
+      - $(inputs.bibtex)
 
 inputs:
   r_script:
@@ -22,6 +29,18 @@ inputs:
     type: Directory
     inputBinding:
       position: 3
+  images_dir:
+    type: Directory
+    inputBinding:
+      position: 4
+  data_dir:
+    type: Directory
+    inputBinding:
+      position: 5
+  bibtex:
+    type: File
+    inputBinding:
+      position: 6
   cache_dirs:
     type:
       type: array
@@ -29,7 +48,8 @@ inputs:
         type: array
         items: Directory
     inputBinding:
-      position: 4
+      position: 7
+
 
 outputs:
   book_dir:

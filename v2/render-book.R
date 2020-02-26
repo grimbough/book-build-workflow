@@ -4,12 +4,12 @@ args <- commandArgs(trailingOnly = TRUE)
 input_dir <- args[1]
 local_library <- args[2]
 
+.libPaths(local_library)
+
 ## we add the local library to .Rprofile so the R sessions 
 ## launched by bookdown::render() can also find it
 xfun::write_utf8(text = paste0(".libPaths('", local_library, "')"),
 	con = file.path(Sys.getenv("HOME"), ".Rprofile") )
-
-.libPaths(local_library)
 
 dir.create("_bookdown_files")
 file.copy(args[-(1:2)], to = "_bookdown_files/", recursive = TRUE)
